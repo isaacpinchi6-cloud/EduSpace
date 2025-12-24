@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Académico Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <i class="fa-solid fa-graduation-cap logo-icon"></i>
+            <h1>EduSpace <span class="subtitle">Repositorio del I.E.S.P.P.P de la especialidad de comunicación VI</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a id="tab-repositorio" class="tab-btn active" onclick="switchTab('repositorio')">Repositorio</a></li>
+                <li><a id="tab-trabajos" class="tab-btn" onclick="switchTab('trabajos')">Mis Trabajos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <!-- Sección de Repositorio: Visible por defecto -->
+        <section id="repositorio" class="section-content" style="display: block;">
+            <div class="header-section">
+                <h2><i class="fa-solid fa-folder-open"></i> Archivos Académicos</h2>
+                <p>Selecciona un área para filtrar los recursos.</p>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterFiles('all')">Todo</button>
+                <button class="filter-btn" onclick="filterFiles('Matemáticas')">Matemáticas</button>
+                <button class="filter-btn" onclick="filterFiles('Ciencias')">Ciencias</button>
+                <button class="filter-btn" onclick="filterFiles('Literatura')">Literatura</button>
+                <button class="filter-btn" onclick="filterFiles('Historia')">Historia</button>
+            </div>
+            <div id="files-grid" class="grid-container">
+            </div>
+        </section>
+        <!-- Sección de Trabajos: Oculta por defecto -->
+        <section id="trabajos" class="section-content" style="display: none;">
+            <div class="header-section">
+                <h2><i class="fa-solid fa-clipboard-list"></i> Gestión de Trabajos</h2>
+                <p>Estado de entregas y tareas pendientes por docente.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="assignments-table">
+                    <thead>
+                        <tr>
+                            <th>Trabajo / Tarea</th>
+                            <th>Profesor</th>
+                            <th>Fecha Límite</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignments-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 EduSpace Plataforma Académica - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal para ampliar foto de perfil -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProfileModal()">&times;</span>
+            <img id="modalProfileImage" src="" alt="Foto de perfil">
+            <div id="modalProfileInfo" class="modal-profile-info"></div>
+        </div>
+    </div>
+
+    <!-- Modal para detalles del trabajo -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content-details">
+            <div class="modal-header-details">
+                <h2 id="detailsTitle"><i class="fa-solid fa-file-lines"></i> Detalles del Trabajo</h2>
+                <span class="close-modal" onclick="closeDetailsModal()">&times;</span>
+            </div>
+            <div class="modal-body-details">
+                <div class="detail-section">
+                    <h3 id="detailsTaskName"></h3>
+                    <div class="detail-info">
+                        <p><i class="fa-solid fa-user-tie"></i> <strong>Profesor:</strong> <span id="detailsTeacher"></span></p>
+                        <p><i class="fa-regular fa-calendar"></i> <strong>Fecha límite:</strong> <span id="detailsDeadline"></span></p>
+                        <p><i class="fa-solid fa-circle-info"></i> <strong>Estado:</strong> <span id="detailsStatus"></span></p>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <h4><i class="fa-solid fa-clipboard-check"></i> Descripción del Trabajo</h4>
+                    <div class="description-box" id="detailsDescription"></div>
+                </div>
+                <div class="detail-section">
+                    <h4><i class="fa-solid fa-list-check"></i> Requisitos</h4>
+                    <ul class="requirements-list" id="detailsRequirements"></ul>
+                </div>
+                <div class="detail-section">
+                    <h4><i class="fa-solid fa-paperclip"></i> Recursos Adjuntos</h4>
+                    <div class="attachments-list" id="detailsAttachments"></div>
+                </div>
+            </div>
+            <div class="modal-footer-details">
+                <button class="btn-modal btn-close" onclick="closeDetailsModal()">
+                    <i class="fa-solid fa-xmark"></i> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
