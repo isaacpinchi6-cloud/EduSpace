@@ -246,6 +246,182 @@ nav a:hover, nav a.active {
     background-color: var(--secondary-color);
 }
 
+/* --- Sección de Recursos --- */
+.recursos-list {
+    margin-top: 2rem;
+}
+
+#recursos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.recurso-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 4px solid var(--primary-color);
+}
+
+.recurso-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recurso-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.recurso-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    min-width: 50px;
+    text-align: center;
+}
+
+.recurso-details {
+    flex: 1;
+}
+
+.recurso-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+}
+
+.recurso-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.recurso-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.recurso-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* --- Estilos para Tarjetas de Docentes --- */
+.docente-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 4px solid var(--primary-color);
+    text-align: center;
+}
+
+.docente-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.docente-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.docente-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.docente-title {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.docente-info {
+    text-align: left;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.docente-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.docente-info p:last-child {
+    margin-bottom: 0;
+}
+
+.docente-info i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+/* --- Estilos para Tarjetas de Estudiantes --- */
+.estudiante-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 4px solid var(--accent-color);
+    text-align: center;
+}
+
+.estudiante-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.estudiante-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin: 0 auto 1rem;
+    display: block;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.estudiante-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+}
+
+.estudiante-code {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
 /* --- Tabla de Trabajos --- */
 .table-responsive {
     overflow-x: auto;
@@ -632,6 +808,11 @@ footer {
         gap: 15px;
     }
    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+   
     .grid-container {
         grid-template-columns: 1fr;
     }
@@ -668,5 +849,26 @@ footer {
     .btn-modal {
         width: 100%;
         justify-content: center;
+    }
+
+    .recurso-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .recurso-info {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .recurso-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .recurso-actions .btn {
+        width: 100%;
     }
 }
