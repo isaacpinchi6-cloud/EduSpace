@@ -17,7 +17,10 @@
         <nav>
             <ul>
                 <li><a id="tab-repositorio" class="tab-btn active" onclick="switchTab('repositorio')">Repositorio</a></li>
-                <li><a id="tab-trabajos" class="tab-btn" onclick="switchTab('trabajos')">Mis Trabajos</a></li>
+                <li><a id="tab-trabajos" class="tab-btn" onclick="switchTab('trabajos')">Pendiente</a></li>
+                <li><a id="tab-recursos" class="tab-btn" onclick="switchTab('recursos')">Recursos</a></li>
+                <li><a id="tab-docentes" class="tab-btn" onclick="switchTab('docentes')">Docentes</a></li>
+                <li><a id="tab-estudiantes" class="tab-btn" onclick="switchTab('estudiantes')">Estudiantes</a></li>
             </ul>
         </nav>
     </header>
@@ -58,6 +61,34 @@
                     <tbody id="assignments-body">
                     </tbody>
                 </table>
+            </div>
+        </section>
+        <!-- Sección de Recursos: Nueva sección -->
+        <section id="recursos" class="section-content" style="display: none;">
+            <div class="header-section">
+                <h2><i class="fa-solid fa-book"></i> Recursos del Área de la Especialidad de Comunicación</h2>
+                <p>Materiales y documentos especializados para el área de comunicación.</p>
+            </div>
+            <div class="recursos-list">
+                <div id="recursos-container"></div>
+            </div>
+        </section>
+        <!-- Sección de Docentes: Nueva sección -->
+        <section id="docentes" class="section-content" style="display: none;">
+            <div class="header-section">
+                <h2><i class="fa-solid fa-chalkboard-user"></i> Directorio de Docentes</h2>
+                <p>Información de contacto y perfil de los profesores.</p>
+            </div>
+            <div id="docentes-grid" class="grid-container">
+            </div>
+        </section>
+        <!-- Sección de Estudiantes: Nueva sección -->
+        <section id="estudiantes" class="section-content" style="display: none;">
+            <div class="header-section">
+                <h2><i class="fa-solid fa-user-graduate"></i> Lista de Estudiantes</h2>
+                <p>Estudiantes registrados en la especialidad de comunicación VI.</p>
+            </div>
+            <div id="estudiantes-grid" class="grid-container">
             </div>
         </section>
     </main>
